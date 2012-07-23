@@ -59,11 +59,6 @@ function step (car) {
 		car.x += speedAxis.x;
 		car.y += speedAxis.y;
 
-		// left wall
-		hitTest(0, 0, 0, ctxH, car.collisions.top.getXY(), function() {
-			car.speed = -1;
-		};)
-
 		// info
 		elPX.innerHTML = Math.floor(car.x);
 		elPY.innerHTML = Math.floor(car.y);
