@@ -32,6 +32,13 @@ function drawPoint (xy) {
 	context.fillRect(xy.x,xy.y,1,1);
 }
 
+function distance (from, to) {
+	var a = from.x > to.x ? from.x - to.x : to.x - from.x,
+		b = from.y > to.y ? from.y - to.y : to.y - from.y
+		;
+	return Math.sqrt(Math.pow(a, 2) + Math.pow(b, 2))
+}
+
 /**
  * Provides requestAnimationFrame in a cross browser way.
  * http://paulirish.com/2011/requestanimationframe-for-smart-animating/
@@ -52,8 +59,3 @@ if ( !window.requestAnimationFrame ) {
 
 }
 
-function hitTest (x, y, xx, yy, coords, hitFn) {
-	if (coords.x <){
-		
-	}
-}
