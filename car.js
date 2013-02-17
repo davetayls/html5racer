@@ -15,13 +15,13 @@ function Car () {
 	};
 }
 Car.prototype = {
-	x: 100,
-	y: 100,
+	x: 870,
+	y: 370,
 	code: 'player',
 	acceleration: 1.1,
 	rotationStep: 4,
-	rotation: 115,
-	speed: 10,
+	rotation: 350,
+	speed: 0,
 	speedDecay: 0.98,
 	maxSpeed: 4,
 	backSpeed: 1.1,
@@ -34,7 +34,7 @@ Car.prototype = {
 		return {
 			x: this.x,
 			y: this.y
-		}
+		};
 	},
 	accelerate: function(){
 		if (this.speed < this.maxSpeed){

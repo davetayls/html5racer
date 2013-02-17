@@ -1,17 +1,19 @@
 /*global Car,TO_RADIANS,drawRotatedImage */
 
-var canvas  = document.getElementById('canvas'),
-	context = canvas.getContext('2d'),
-	ctxW    = canvas.width,
-	ctxH    = canvas.height,
-	player  = new Car(),
-	track   = new Image(),
+var canvas   = document.getElementById('canvas'),
+	context  = canvas.getContext('2d'),
+	ctxW     = canvas.width,
+	ctxH     = canvas.height,
+	player   = new Car(),
+	track    = new Image(),
+	trackHit = new Image(),
 
-	elPX    = document.getElementById('px'),
-	elPY    = document.getElementById('py')
+	elPX     = document.getElementById('px'),
+	elPY     = document.getElementById('py')
 ;
 
 track.src = "track.png";
+trackHit.src = "track-hit.png";
 
 // Keyboard Variables
 var key = {
