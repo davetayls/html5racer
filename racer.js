@@ -5,10 +5,13 @@ var canvas  = document.getElementById('canvas'),
 	ctxW    = canvas.width,
 	ctxH    = canvas.height,
 	player  = new Car(),
+	track   = new Image(),
 
 	elPX    = document.getElementById('px'),
 	elPY    = document.getElementById('py')
 ;
+
+track.src = "track.png";
 
 // Keyboard Variables
 var key = {
@@ -36,6 +39,7 @@ function speedXY (rotation, speed) {
 var x=10,y=10;
 function draw (car) {
 	context.clearRect(0,0,ctxW,ctxH);
+	context.drawImage(track, 0, 0);
 	drawRotatedImage(car.img, car.x, car.y, car.rotation);
 	drawPoint(car.collisions.top.getXY());
 	drawPoint(car.collisions.right.getXY());

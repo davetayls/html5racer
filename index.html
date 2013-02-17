@@ -4,11 +4,15 @@
 		<title>Simple Racer</title>
 		<link href="racer.css" rel="stylesheet">
 		<style type="text/css">
-			canvas { border: solid 1px #ccc; }
+			canvas {
+				display: block;
+				border: solid 1px #ccc;
+				margin: 0 auto;
+			}
 		</style>
 	</head>
 	<body>
-		<canvas id="canvas" width="500" height="500"></canvas>
+		<canvas id="canvas" width="1000" height="700"></canvas>
 		<div>
 			Player: x <span id="px">0</span> y <span id="py"></span>
 		</div>

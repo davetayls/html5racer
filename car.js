@@ -18,12 +18,12 @@ Car.prototype = {
 	x: 100,
 	y: 100,
 	code: 'player',
-	acceleration: 1.2,
-	rotationStep: 5,
+	acceleration: 1.1,
+	rotationStep: 4,
 	rotation: 115,
 	speed: 10,
-	speedDecay: 0.97,
-	maxSpeed: 7,
+	speedDecay: 0.98,
+	maxSpeed: 4,
 	backSpeed: 1.1,
 
 
