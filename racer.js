@@ -42,13 +42,6 @@ function speedXY (rotation, speed) {
 }
 
 var x=10,y=10;
-function draw (car) {
-	context.clearRect(0,0,ctxW,ctxH);
-	context.drawImage(track, 0, 0);
-	drawRotatedImage(car.img, car.x, car.y, car.rotation);
-	// drawPoint(car.collisions.top.getXY());
-	// drawPoint(car.collisions.right.getXY());
-}
 function step (car) {
 	if (car.code === 'player'){
 
@@ -68,10 +61,31 @@ function step (car) {
 		car.x += speedAxis.x;
 		car.y += speedAxis.y;
 
+		// collisions
+		if (car.collisions.left.isHit(hit)){
+			car.steerRight();
+			car.decelerate();
+		}
+		if (car.collisions.right.isHit(hit)){
+			car.steerLeft();
+			car.decelerate();
+		}
+		if (car.collisions.top.isHit(hit)){
+			car.decelerate();
+		}
+		if (car.collisions.bottom.isHit(hit)){
+			car.decelerate();
+		}
+
 		// info
 		elPX.innerHTML = Math.floor(car.x);
 		elPY.innerHTML = Math.floor(car.y);
 	}
+}
+function draw (car) {
+	context.clearRect(0,0,ctxW,ctxH);
+	context.drawImage(track, 0, 0);
+	drawRotatedImage(car.img, car.x, car.y, car.rotation);
 }
 
 // Keyboard event listeners

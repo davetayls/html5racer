@@ -30,25 +30,22 @@ HitMap.prototype = {
 		this.context.drawImage(this.img, 0, 0);
 	},
 	isHit: function(x, y){
-		// get the pixel RGBA values
-		var pixel = this.context.getImageData(x, y, 1, 1);
-		if (pixel){
-			// we consider a hit if the Red
-			// value is 0
-			return pixel.data[0] === 0;
-		} else {
-			return false;
-		}
+        if (this.context){
+            // get the pixel RGBA values
+            var pixel = this.context.getImageData(x, y, 1, 1);
+            if (pixel){
+                // we consider a hit if the Red
+                // value is 0
+                return pixel.data[0] === 0;
+            } else {
+                return false;
+            }
+        } else {
+            return false;
+        }
 	}
 };
 
-
-
-
-
-
-
-/* old trial stuff */
 function CollisionPoint (car, rotation, distance) {
 	this.car = car;
 	this.rotation = rotation;
@@ -64,7 +61,11 @@ CollisionPoint.prototype = {
 					this.car.rotation + this.rotation,
 					this.distance
 				);
-	}
+	},
+    isHit: function(hitMap){
+        var xy = this.getXY();
+        return hitMap.isHit(xy.x, xy.y);
+    }
 };
 
 function CollisionRadius () {
