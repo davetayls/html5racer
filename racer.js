@@ -43,8 +43,8 @@ function draw (car) {
 	context.clearRect(0,0,ctxW,ctxH);
 	context.drawImage(track, 0, 0);
 	drawRotatedImage(car.img, car.x, car.y, car.rotation);
-	drawPoint(car.collisions.top.getXY());
-	drawPoint(car.collisions.right.getXY());
+	// drawPoint(car.collisions.top.getXY());
+	// drawPoint(car.collisions.right.getXY());
 }
 function step (car) {
 	if (car.code === 'player'){
