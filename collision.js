@@ -1,5 +1,10 @@
-
-
+/**
+ * A hit map class for dynamically
+ * checking whether an x/y coordinate
+ * with an appropriate hit image
+ *
+ * @param {Image} img The hit map image
+ */
 function HitMap(img){
 	var self = this;
 	this.img = img;
