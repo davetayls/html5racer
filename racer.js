@@ -15,6 +15,9 @@ var canvas   = document.getElementById('canvas'),
 track.src = "track.png";
 trackHit.src = "track-hit.png";
 
+// collision
+var hit = new HitMap(trackHit);
+
 // Keyboard Variables
 var key = {
 	UP: 38,
