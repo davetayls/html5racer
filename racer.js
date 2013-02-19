@@ -64,17 +64,17 @@ function step (car) {
 		// collisions
 		if (car.collisions.left.isHit(hit)){
 			car.steerRight();
-			car.decelerate();
+			car.decelerate(1);
 		}
 		if (car.collisions.right.isHit(hit)){
 			car.steerLeft();
-			car.decelerate();
+			car.decelerate(1);
 		}
 		if (car.collisions.top.isHit(hit)){
-			car.decelerate();
+			car.decelerate(1);
 		}
 		if (car.collisions.bottom.isHit(hit)){
-			car.decelerate();
+			car.decelerate(1);
 		}
 
 		// info

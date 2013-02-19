@@ -47,14 +47,17 @@ Car.prototype = {
 			}
 		}
 	},
-	decelerate: function(){
+	decelerate: function(min){
+		min = min || 0;
 		if (Math.abs(this.speed) < this.maxSpeed){
 			if (this.speed > 0){
 				this.speed *= this.speedDecay;
+				this.speed = this.speed < min ? min : this.speed;
 			} else if (this.speed === 0){
 				this.speed = -0.4;
 			} else {
 				this.speed *= this.backSpeed;
+				this.speed = this.speed > min ? min : this.speed;
 			}
 		}
 	},
